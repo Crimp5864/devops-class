@@ -13,13 +13,8 @@ Vagrant.configure("2") do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://vagrantcloud.com/search.
   config.vm.box = "jasonc/centos8"
-  config.vm.hostname = "testbox01"
-  config.vm.network "private_network", ip: "10.23.45.10"
-
-  config.vm.provision "shell", inline: <<-SHELL
-    sudo dnf -y install httpd php
-    sudo systemctl --now enable httpd
-  SHELL
+  config.vm.hostname = "kanboard"
+  config.vm.network "private_network", ip: "10.23.45.25"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
